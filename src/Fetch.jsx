@@ -22,7 +22,7 @@ const Fetch=()=>{
     const handleSearch=(e)=>{
         setSearchQuery(e.target.value);
         const FetchUser=users.find(user=>
-            user.login.toLowerCase().includes(e.target.value.toLowerCase()))
+            user.login.toLowerCase().startsWith(e.target.value.toLowerCase()))
         setFilteredUser(FetchUser)
     }
     return(
