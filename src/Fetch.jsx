@@ -19,12 +19,19 @@ const Fetch=()=>{
         }
         FetchData()
     },[]);
-    const handleSearch=(e)=>{
-        setSearchQuery(e.target.value);
-        const FetchUser=users.find(user=>
-            user.login.toLowerCase().startsWith(e.target.value.toLowerCase()))
-        setFilteredUser(FetchUser)
-    }
+    const handleSearch = (e) => {
+        const query = e.target.value;
+        setSearchQuery(query);
+        if (query === '') {
+            setFilteredUser(null);
+        } else {
+            const fetchUser = users.find(user =>
+                user.login.toLowerCase().startsWith(query.toLowerCase())
+            );
+            setFilteredUser(fetchUser);
+        }
+    };
+    
     return(
         <section>
            <h2>Github Users</h2>
