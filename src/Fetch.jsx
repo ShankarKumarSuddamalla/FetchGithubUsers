@@ -5,7 +5,7 @@ const url='https://api.github.com/users';
 const Fetch=()=>{
     const [users,setUsers] = useState([])
     const [searchQuery,setSearchQuery]=useState('')
-    const [filteredUser,setFilteredUser]=useState(null)
+    const [filteredUsers,setFilteredUsers]=useState([])
     useEffect(()=>{
         const FetchData=async()=>{
             try{
@@ -23,12 +23,12 @@ const Fetch=()=>{
         const query = e.target.value;
         setSearchQuery(query);
         if (query === '') {
-            setFilteredUser(null);
+            setFilteredUsers([]);
         } else {
-            const fetchUser = users.find(user =>
+            const fetchUser = users.filter(user =>
                 user.login.toLowerCase().startsWith(query.toLowerCase())
             );
-            setFilteredUser(fetchUser);
+            setFilteredUsers(fetchUser);
         }
     };
     
@@ -37,18 +37,18 @@ const Fetch=()=>{
            <h2>Github Users</h2>
            <input type="text" placeholder="Search for a user by name from the api url used" value={searchQuery} onChange={handleSearch} />
            <ul className="users">
-            {filteredUser ? (
-          <li key={filteredUser.id}>
-            <h3>{filteredUser.login}</h3>
-            <img src={filteredUser.avatar_url} alt={filteredUser.login} />
-            <a href={filteredUser.html_url} >Profile</a>
-          </li>
+        {filteredUsers.length > 0 ? (
+          filteredUsers.map(user => (
+            <li key={user.id}>
+              <h3>{user.login}</h3>
+              <img src={user.avatar_url} alt={user.login} />
+            </li>
+          ))
         ) : (
-            searchQuery && <p>No user found</p>
-          )}
-        </ul>
-      </section>
-    );
-  };
-  
+          searchQuery && <p>No user found</p>
+        )}
+      </ul>
+    </section>
+  );
+};
   export default Fetch;
