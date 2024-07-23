@@ -12,3 +12,5 @@ Currently, two official plugins are available:
 Fetching GithubUsers from an api using search button in react
 Api Url - https://api.github.com/users
 >>>>>>> 1786478beaf35a800a7a681a8e317a676fc58958
+>>>>>>>
+>>>>>>> Deployment Link - https://fetch-github-users-api.netlify.app/
