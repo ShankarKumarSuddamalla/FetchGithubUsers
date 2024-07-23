@@ -1,0 +1,101 @@
+section {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #e67e22;
+  outline: none;
+}
+
+ul.users {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+li h3 {
+  margin-top: 0;
+  color: #e67e22;
+  animation: fadeIn 1s ease-in-out;
+}
+
+li img {
+  max-width: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  animation: bounceIn 1s ease;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+p {
+  text-align: center;
+  color: #555;
+  animation: fadeIn 1s ease-in-out;
+}
